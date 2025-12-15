@@ -45,7 +45,7 @@ export default function ContactForm() {
       const packageName = selectedPackage ? selectedPackage.title : "Un Paquete";
 
       // 1. Enviar datos de texto a Google Sheets
-      if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "TU_URL_DE_APPS_SCRIPT_AQUI") {
+      if (GOOGLE_SCRIPT_URL) {
         await fetch(GOOGLE_SCRIPT_URL, {
           method: "POST",
           mode: "no-cors",
