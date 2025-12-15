@@ -1,0 +1,197 @@
+/* ContactForm.module.css */
+
+.section {
+  --color-bg-light: #F9F7F2;
+  --color-text-dark: #101929;
+  --color-accent: #CCA43B;
+  --color-white: #FFFFFF;
+  --color-border: #E5E0D8;
+  
+  padding: 6rem 0;
+  background-color: var(--color-bg-light);
+}
+
+.container {
+  width: 100%;
+  max-width: 800px; /* Más ancho para acomodar más datos */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.formCard {
+  background-color: var(--color-white);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-family: "Inter", sans-serif;
+  color: rgba(16, 25, 41, 0.6);
+  font-size: 1rem;
+}
+
+/* Grid del Formulario */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  background-color: #FAFAFA;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background-color: var(--color-white);
+  box-shadow: 0 0 0 4px rgba(204, 164, 59, 0.1);
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Input de Archivo Personalizado */
+.fileInputWrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+.fileInputLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  background-color: #FAFAFA;
+  border: 2px dashed var(--color-border);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(16, 25, 41, 0.6);
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+}
+
+.fileInputLabel:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: rgba(204, 164, 59, 0.05);
+}
+
+.hiddenInput {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.fileName {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Botón y Disclaimer */
+.submitButton {
+  width: 100%;
+  padding: 1.25rem;
+  margin-top: 2rem;
+  background-color: var(--color-text-dark);
+  color: var(--color-white);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px -5px rgba(204, 164, 59, 0.3);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.disclaimer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(16, 25, 41, 0.5);
+  font-family: "Inter", sans-serif;
+  background-color: rgba(204, 164, 59, 0.05);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Media Query */
+@media (min-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

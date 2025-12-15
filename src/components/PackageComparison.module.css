@@ -1,0 +1,230 @@
+/* PackageComparison.module.css */
+
+.container {
+  --color-bg-white: #FFFFFF;
+  --color-bg-light: #F9F7F2;
+  --color-text-dark: #101929;
+  --color-accent: #CCA43B;
+  --color-secondary: #E5E0D8;
+  
+  background-color: var(--color-bg-white);
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  margin-top: 3rem;
+}
+
+/* --- HEADER DE LA SECCIÓN --- */
+.headerSection {
+  background-color: var(--color-text-dark);
+  color: var(--color-bg-light);
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-family: "Inter", sans-serif;
+  color: rgba(249, 247, 242, 0.8);
+  font-size: 1rem;
+}
+
+/* --- TABLA --- */
+.tableContainer {
+  overflow-x: auto;
+  /* Scroll suave en móviles */
+  -webkit-overflow-scrolling: touch; 
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate; /* Necesario para bordes redondeados si quisieras */
+  border-spacing: 0;
+  min-width: 800px; /* Asegura que no se aplaste en móvil */
+}
+
+/* Cabecera de Tabla (Los Paquetes) */
+.tableHeadRow {
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.featureHeader {
+  text-align: left;
+  padding: 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-light);
+  position: sticky; /* Opcional: Para mantener la columna visible */
+  left: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.packageHeaderCell {
+  padding: 1.5rem 1rem;
+  vertical-align: top;
+  min-width: 200px;
+  background-color: var(--color-bg-white);
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+/* Tarjeta interna en el header */
+.packageHeaderCard {
+  background-color: rgba(229, 224, 216, 0.3); /* Secondary con opacidad */
+  border-radius: 0.75rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Estilos específicos para el Popular */
+.popularHeaderCard {
+  background-color: rgba(204, 164, 59, 0.05);
+  border: 2px solid var(--color-accent);
+  position: relative;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.popularBadge {
+  color: var(--color-accent);
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.packageTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.packagePrice {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Botones */
+.selectButton {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.btnDark {
+  background-color: var(--color-text-dark);
+  color: #FFF;
+}
+.btnDark:hover {
+  background-color: var(--color-accent);
+}
+
+.btnAccent {
+  background-color: var(--color-accent);
+  color: #FFF;
+}
+.btnAccent:hover {
+  background-color: #b89335;
+}
+
+/* --- CUERPO DE TABLA (Features) --- */
+.tableRow {
+  transition: background-color 0.2s;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.tableRow:hover {
+  background-color: rgba(229, 224, 216, 0.2);
+}
+
+.featureName {
+  padding: 1.25rem 1.5rem;
+  font-family: "Inter", sans-serif;
+  color: var(--color-text-dark);
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(229, 224, 216, 0.5);
+}
+
+.featureStatus {
+  padding: 1.25rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(229, 224, 216, 0.5);
+}
+
+/* Iconos de estado */
+.checkIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+}
+
+.emptyIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+  margin: 0 auto;
+  opacity: 0.5;
+}
+
+/* --- FOOTER DE LA TARJETA --- */
+.footerSection {
+  background-color: rgba(229, 224, 216, 0.2);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footerText {
+  font-family: "Inter", sans-serif;
+  color: rgba(16, 25, 41, 0.7);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.consultationButton {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.consultationButton:hover {
+  background-color: var(--color-accent);
+  color: white;
+}

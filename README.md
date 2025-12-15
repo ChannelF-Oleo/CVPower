@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CV Power - Landing Page
 
-## Getting Started
+Proyecto de landing page profesional para servicios de optimización de CV y LinkedIn.
 
-First, run the development server:
+## 🚀 Tecnologías
+
+- **Next.js 16** - Framework React con SSR/SSG
+- **TypeScript** - Tipado estático
+- **Tailwind CSS** - Estilos utilitarios con tema personalizado "Executive Gold"
+- **Framer Motion** - Animaciones suaves
+- **Jest + React Testing Library** - Testing unitario
+- **fast-check** - Property-based testing
+
+## 🎨 Diseño
+
+### Paleta de Colores "Executive Gold"
+- **Crema Suave** (`#F9F7F2`) - Fondos generales
+- **Azul Medianoche** (`#101929`) - Textos principales
+- **Mostaza Antiguo** (`#CCA43B`) - Botones y acentos
+- **Gris Cálido** (`#E5E0D8`) - Fondos de tarjetas
+
+### Tipografía
+- **Playfair Display** - Títulos (serif, lujo)
+- **Inter** - Textos largos (sans-serif, legibilidad)
+
+## 📦 Paquetes de Servicios
+
+1. **Paquete Básico** - $600
+2. **Paquete Estándar** - $900 (Popular)
+3. **Paquete Premium** - $2,100
+
+## 🛠️ Comandos
 
 ```bash
+# Desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build de producción
+npm run build
+
+# Iniciar servidor de producción
+npm start
+
+# Ejecutar tests
+npm test
+
+# Tests en modo watch
+npm run test:watch
+
+# Coverage de tests
+npm run test:coverage
+
+# Linting
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Estructura del Proyecto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── components/     # Componentes React
+├── data/          # Datos estáticos (paquetes)
+├── types/         # Interfaces TypeScript
+├── utils/         # Utilidades (validación, API, WhatsApp)
+└── __tests__/     # Tests unitarios
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔧 Configuración
 
-## Learn More
+### Variables de Entorno
 
-To learn more about Next.js, take a look at the following resources:
+Crear archivo `.env.local`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+NEXT_PUBLIC_WHATSAPP_NUMBER=1234567890
+NEXT_PUBLIC_GOOGLE_SCRIPT_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Google Apps Script
 
-## Deploy on Vercel
+El backend utiliza Google Sheets + Google Apps Script para almacenar leads.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Integración WhatsApp
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Redirección automática a WhatsApp con mensaje pre-llenado después del envío del formulario.
+
+## 🧪 Testing
+
+- **Tests unitarios** con Jest y React Testing Library
+- **Property-based testing** con fast-check
+- **Configuración automática** de Next.js para testing
+
+## 📱 Responsive Design
+
+- **Mobile-first** approach
+- **Breakpoints** optimizados para móvil, tablet y desktop
+- **Touch-friendly** buttons y navegación
+
+## 🚀 Despliegue
+
+Optimizado para despliegue en **Vercel** con configuración automática de dominio y SSL.
+
+---
+
+Desarrollado siguiendo metodología de **Spec-Driven Development** con requisitos formales y propiedades de corrección.
