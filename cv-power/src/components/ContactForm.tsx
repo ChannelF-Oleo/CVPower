@@ -24,7 +24,7 @@ export default function ContactForm() {
   const GOOGLE_SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycby_-sAZecKEUeMHFmk8ee-YwmopCTAIiRrRcuVFAq7R-RMihDKewHPNW1vKqdcROrqOzw/exec";
   // Número de Abdia (Formato internacional sin +)
-  const ABDIA_PHONE = "18496281004";
+  const ABDIA_PHONE = "18496281404";
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>

@@ -1,24 +1,25 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { packages } from '@/data/packages';
-import PackageCard from './PackageCard';
-import styles from './PackagesSection.module.css';
+import { motion } from "framer-motion";
+import { packages } from "@/data/packages";
+import PackageCard from "./PackageCard";
+import styles from "./PackagesSection.module.css";
 
 interface PackagesSectionProps {
   onPackageSelect?: (packageId: string) => void;
 }
 
-export default function PackagesSection({ onPackageSelect }: PackagesSectionProps) {
-  
+export default function PackagesSection({
+  onPackageSelect,
+}: PackagesSectionProps) {
   const handlePackageSelect = (packageId: string) => {
     if (onPackageSelect) {
       onPackageSelect(packageId);
     } else {
       // Default behavior: scroll to contact section
-      const contactSection = document.getElementById('contacto');
+      const contactSection = document.getElementById("contacto");
       if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
+        contactSection.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
@@ -26,13 +27,12 @@ export default function PackagesSection({ onPackageSelect }: PackagesSectionProp
   // Variantes de animación reutilizables
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 }
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
     <section id="paquetes" className={styles.section}>
       <div className={styles.container}>
-        
         {/* Section Header */}
         <motion.div
           className={styles.headerContainer}
@@ -46,17 +46,17 @@ export default function PackagesSection({ onPackageSelect }: PackagesSectionProp
             variants={fadeInUp}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Elige tu{' '}
-            <span className={styles.highlight}>Paquete Ideal</span>
+            Elige tu <span className={styles.highlight}>Paquete Ideal</span>
           </motion.h2>
-          
+
           <motion.p
             className={styles.subtitle}
             variants={fadeInUp}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Servicios profesionales diseñados para maximizar tus oportunidades laborales. 
-            Desde CV básico hasta búsqueda activa de empleo con garantía de resultados.
+            Servicios profesionales diseñados para maximizar tus oportunidades
+            laborales. Desde CV básico hasta búsqueda activa de empleo con
+            garantía de resultados.
           </motion.p>
 
           {/* Trust Indicators */}
@@ -67,7 +67,11 @@ export default function PackagesSection({ onPackageSelect }: PackagesSectionProp
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            {['Optimizado para ATS', 'Entrega Garantizada', 'Soporte Personalizado'].map((text, i) => (
+            {[
+              "Optimizado para ATS",
+              "Entrega Garantizada",
+              "Soporte Personalizado",
+            ].map((text, i) => (
               <div key={i} className={styles.trustItem}>
                 <span className={styles.checkIcon}>✓</span>
                 <span className={styles.trustText}>{text}</span>
@@ -85,7 +89,7 @@ export default function PackagesSection({ onPackageSelect }: PackagesSectionProp
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              style={{ display: 'flex' }} // Asegura que las tarjetas tengan la misma altura
+              style={{ display: "flex" }} // Asegura que las tarjetas tengan la misma altura
             >
               <PackageCard
                 package={pkg}
@@ -108,13 +112,13 @@ export default function PackagesSection({ onPackageSelect }: PackagesSectionProp
             ¿No estás seguro cuál elegir?
           </motion.h3>
           <motion.p className={styles.ctaText} variants={fadeInUp}>
-            Nuestro equipo de expertos te ayudará a seleccionar el paquete perfecto 
-            para tus objetivos profesionales y presupuesto.
+            Nuestro equipo de expertos te ayudará a seleccionar el paquete
+            perfecto para tus objetivos profesionales y presupuesto.
           </motion.p>
-          
+
           <div className={styles.actionButtons}>
             <motion.button
-              onClick={() => handlePackageSelect('consultation')}
+              onClick={() => handlePackageSelect("consultation")}
               className={styles.primaryButton}
               variants={fadeInUp}
               whileHover={{ scale: 1.05 }}
@@ -122,16 +126,16 @@ export default function PackagesSection({ onPackageSelect }: PackagesSectionProp
             >
               Consulta Gratuita
             </motion.button>
-            
+
             <motion.a
-              href="https://wa.me/18496281004?text=Hola, me gustaría información sobre los paquetes de CV Power"
+              href="https://wa.me/18496281404?text=Hola, me gustaría información sobre los paquetes de CV Power"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.whatsappLink}
               variants={fadeInUp}
               whileHover={{ scale: 1.05 }}
             >
-              <span style={{ fontSize: '1.25rem' }}>📱</span>
+              <span style={{ fontSize: "1.25rem" }}>📱</span>
               <span>WhatsApp directo</span>
             </motion.a>
           </div>
@@ -147,14 +151,13 @@ export default function PackagesSection({ onPackageSelect }: PackagesSectionProp
         >
           <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
           <blockquote className={styles.quote}>
-            "Gracias a CV Power conseguí 3 entrevistas en la primera semana. 
-            El CV optimizado realmente marca la diferencia."
+            "Gracias a CV Power conseguí 3 entrevistas en la primera semana. El
+            CV optimizado realmente marca la diferencia."
           </blockquote>
           <cite className={styles.author}>
             — María González, Marketing Manager
           </cite>
         </motion.div>
-
       </div>
     </section>
   );
