@@ -41,7 +41,7 @@ export default function Hero({ onCTAClick }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.4 }}
             className={styles.headline}
           >
-            Profesionaliza tu imagen,{' '}
+            Mejora tu perfil profesional,{' '}
             <span className={styles.highlight}>alcanza tus metas</span>
           </motion.h1>
 
