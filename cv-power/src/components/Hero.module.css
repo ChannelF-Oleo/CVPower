@@ -1,0 +1,185 @@
+/* Hero.module.css */
+
+/* Definición local de la Paleta "The Executive Gold" */
+.heroSection {
+  --color-bg-light: #F9F7F2;      /* Crema Suave */
+  --color-bg-secondary: #E5E0D8;  /* Gris Cálido */
+  --color-text-dark: #101929;     /* Azul Medianoche */
+  --color-accent: #CCA43B;        /* Mostaza Antiguo */
+  --color-white: #FFFFFF;
+  
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem; /* pt-20 equivalent */
+  
+  /* Gradiente sutil y elegante */
+  background: linear-gradient(
+    135deg, 
+    var(--color-bg-light) 0%, 
+    var(--color-bg-light) 60%, 
+    rgba(229, 224, 216, 0.3) 100%
+  );
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* container mx-auto standard */
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.contentWrapper {
+  max-width: 56rem; /* max-w-4xl */
+  margin: 0 auto;
+}
+
+/* Tipografía de Lujo */
+.headline {
+  font-family: "Playfair Display", serif; /* Asegúrate de importar esta fuente */
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.highlight {
+  color: var(--color-accent);
+}
+
+.subheadline {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  color: rgba(16, 25, 41, 0.8); /* brand-dark con opacidad */
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid de Beneficios */
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.iconCircle {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-white);
+  font-size: 0.875rem;
+}
+
+.benefitText {
+  font-family: "Inter", sans-serif;
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+/* Botón CTA */
+.ctaButton {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #b89335; /* Un tono ligeramente más oscuro del mostaza */
+}
+
+/* Indicadores de Confianza (Trust) */
+.trustSection {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(16, 25, 41, 0.1);
+}
+
+.trustLabel {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: rgba(16, 25, 41, 0.6);
+  margin-bottom: 1rem;
+}
+
+.trustTags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0.6;
+}
+
+.trustTag {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mouse {
+  width: 1.5rem;
+  height: 2.5rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+}
+
+.wheel {
+  width: 0.25rem;
+  height: 0.75rem;
+  background-color: var(--color-accent);
+  border-radius: 9999px;
+  margin-top: 0.5rem;
+}
+
+/* Media Queries para Responsividad */
+@media (min-width: 768px) {
+  .headline { font-size: 3.75rem; }
+  .subheadline { font-size: 1.25rem; }
+  .benefitsGrid { grid-template-columns: repeat(3, 1fr); }
+  .benefitItem { justify-content: flex-start; }
+  .ctaButton { padding: 1.25rem 3rem; }
+}
+
+@media (min-width: 1024px) {
+  .headline { font-size: 4.5rem; }
+}

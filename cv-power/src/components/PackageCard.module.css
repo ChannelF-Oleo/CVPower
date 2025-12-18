@@ -1,0 +1,185 @@
+/* PackageCard.module.css */
+
+.card {
+  --color-bg-white: #FFFFFF;
+  --color-text-dark: #101929;
+  --color-accent: #CCA43B;
+  --color-secondary: #E5E0D8;
+  
+  position: relative;
+  background-color: var(--color-bg-white);
+  border-radius: 1rem; /* rounded-2xl */
+  padding: 2rem;
+  border: 1px solid var(--color-secondary);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover suave para tarjetas normales */
+.card:hover {
+  border-color: rgba(204, 164, 59, 0.5);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* --- ESTADO POPULAR (Highlight) --- */
+.popularCard {
+  border: 2px solid var(--color-accent);
+  /* Efecto 'Ring' de Tailwind recreado en CSS puro */
+  box-shadow: 0 0 0 4px rgba(204, 164, 59, 0.2), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+/* --- BADGE --- */
+.popularBadgeWrapper {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.popularBadge {
+  background-color: var(--color-accent);
+  color: #FFF;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --- HEADER --- */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem; /* text-4xl */
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.currency {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: rgba(16, 25, 41, 0.6);
+  margin-left: 0.5rem;
+  font-weight: 500;
+}
+
+.deliveryInfo {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: rgba(16, 25, 41, 0.7);
+  background-color: var(--color-secondary);
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+/* --- FEATURES LIST --- */
+.featuresList {
+  margin-bottom: 2rem;
+  flex-grow: 1; /* Empuja el botón hacia abajo para alinearlos */
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.15rem; /* Alineación óptica con el texto */
+}
+
+.checkIcon svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: #FFF;
+}
+
+.featureText {
+  font-family: "Inter", sans-serif;
+  color: var(--color-text-dark);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Texto destacado (ej: "Todo lo del plan anterior") */
+.highlightFeature {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* --- CTA BUTTON --- */
+.ctaButton {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Botón Estándar */
+.btnStandard {
+  background-color: var(--color-text-dark);
+  color: #FFF;
+}
+
+.btnStandard:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* Botón Popular (Dorado) */
+.btnPopular {
+  background-color: var(--color-accent);
+  color: #FFF;
+  box-shadow: 0 10px 15px -3px rgba(204, 164, 59, 0.3);
+}
+
+.btnPopular:hover {
+  background-color: #b89335;
+  transform: translateY(-2px);
+}

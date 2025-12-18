@@ -1,0 +1,213 @@
+/* Header.module.css */
+
+.header {
+  --color-bg-light: #F9F7F2;      /* Crema Suave */
+  --color-text-dark: #101929;     /* Azul Medianoche */
+  --color-accent: #CCA43B;        /* Mostaza Antiguo */
+  --color-white: #FFFFFF;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  padding: 1rem 0;
+}
+
+/* Estado cuando se hace scroll */
+.headerScrolled {
+  background-color: rgba(249, 247, 242, 0.95); /* brand-light con transparencia */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 0; /* Se hace un poco más pequeño */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- LOGO --- */
+.logoGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logoCircle {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.logoTextContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1;
+}
+
+.logoSubtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  color: rgba(16, 25, 41, 0.7);
+  margin-top: 0.2rem;
+}
+
+/* --- DESKTOP NAV --- */
+.desktopNav {
+  display: none;
+}
+
+.navLink {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: var(--color-text-dark);
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: var(--color-accent);
+}
+
+/* Animación del subrayado */
+.linkUnderline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover .linkUnderline {
+  width: 100%;
+}
+
+.ctaButton {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.ctaButton:hover {
+  background-color: #b89335;
+}
+
+/* --- MOBILE TOGGLE --- */
+.mobileToggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 60;
+}
+
+.bar {
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--color-text-dark);
+  transition: all 0.3s ease;
+}
+
+/* --- MOBILE MENU --- */
+.mobileMenuContainer {
+  overflow: hidden;
+  background-color: var(--color-bg-light);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem;
+}
+
+.mobileLink {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-family: "Inter", sans-serif;
+  color: var(--color-text-dark);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.mobileLink:hover {
+  background-color: rgba(204, 164, 59, 0.1); /* Accent con baja opacidad */
+  color: var(--color-accent);
+}
+
+.mobileCtaContainer {
+  padding: 1rem;
+}
+
+.mobileCtaButton {
+  width: 100%;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+}
+
+/* Queries */
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .mobileToggle, .mobileMenuWrapper {
+    display: none;
+  }
+
+  .logoSubtitle {
+    display: block;
+  }
+}

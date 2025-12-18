@@ -1,0 +1,226 @@
+/* Footer.module.css */
+
+.footer {
+  --color-bg-dark: #101929;      /* Azul Medianoche */
+  --color-text-light: #F9F7F2;   /* Crema Suave */
+  --color-accent: #CCA43B;       /* Mostaza Antiguo */
+  --color-text-muted: rgba(249, 247, 242, 0.7);
+  
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- GRID PRINCIPAL --- */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* --- SECCIÓN DE MARCA (Columna Izquierda) --- */
+.brandSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.logoIcon {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.brandName {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  line-height: 1.2;
+}
+
+.brandSlogan {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.brandDescription {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+
+/* Redes Sociales */
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: var(--color-text-light);
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.socialIcon:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* --- COLUMNAS DE ENLACES --- */
+.linksColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-light);
+  position: relative;
+  display: inline-block;
+}
+
+/* Pequeña línea decorativa bajo el título */
+.columnTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 2rem;
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footerLink {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: var(--color-accent);
+  padding-left: 0.25rem; /* Pequeño movimiento a la derecha */
+}
+
+/* --- BARRA INFERIOR (Bottom Bar) --- */
+.bottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.legalLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.legalLink {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.legalLink:hover {
+  color: var(--color-accent);
+}
+
+/* --- BARRA DE CONFIANZA (Trust Signals) --- */
+.trustBar {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.6;
+}
+
+.trustIcon {
+  color: var(--color-accent);
+}
+
+.trustText {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .mainGrid {
+    grid-template-columns: 2fr 1fr 1fr; /* Columna ancha para marca, 2 para links */
+  }
+
+  .bottomBar {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}

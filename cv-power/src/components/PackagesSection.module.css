@@ -1,0 +1,207 @@
+/* PackagesSection.module.css */
+
+.section {
+  --color-bg-light: #F9F7F2;      /* Crema Suave */
+  --color-bg-secondary: #E5E0D8;  /* Gris Cálido */
+  --color-text-dark: #101929;     /* Azul Medianoche */
+  --color-accent: #CCA43B;        /* Mostaza Antiguo */
+  --color-white: #FFFFFF;
+  
+  padding: 5rem 0;
+  /* Gradiente sutil y elegante recreado de Tailwind */
+  background: linear-gradient(
+    135deg, 
+    rgba(229, 224, 216, 0.2) 0%, 
+    var(--color-bg-light) 50%, 
+    rgba(229, 224, 216, 0.3) 100%
+  );
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* --- HEADER DE SECCIÓN --- */
+.headerContainer {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--color-accent);
+}
+
+.subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  color: rgba(16, 25, 41, 0.8);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 48rem; /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Indicadores de Confianza */
+.trustIndicators {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0.8;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkIcon {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.trustText {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+/* --- GRID DE PAQUETES --- */
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* --- CTA INFERIOR (Bottom Area) --- */
+.bottomCta {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(16, 25, 41, 0.1);
+}
+
+.ctaTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 1rem;
+}
+
+.ctaText {
+  font-family: "Inter", sans-serif;
+  color: rgba(16, 25, 41, 0.7);
+  margin-bottom: 2rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.primaryButton {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primaryButton:hover {
+  background-color: #b89335;
+}
+
+.whatsappLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-dark);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.whatsappLink:hover {
+  color: var(--color-accent);
+}
+
+/* --- TESTIMONIAL PREVIEW --- */
+.testimonialCard {
+  margin-top: 4rem;
+  background-color: var(--color-white);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  max-width: 56rem; /* max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.stars {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.25rem;
+}
+
+.quote {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--color-text-dark);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.author {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: rgba(16, 25, 41, 0.7);
+  font-weight: 500;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .title { font-size: 3rem; }
+  .gridContainer { grid-template-columns: repeat(2, 1fr); }
+  .actionButtons { flex-direction: row; gap: 2rem; }
+}
+
+@media (min-width: 1024px) {
+  .title { font-size: 3.75rem; }
+  .gridContainer { grid-template-columns: repeat(3, 1fr); }
+}

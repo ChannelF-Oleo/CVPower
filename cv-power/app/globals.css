@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root {
+  --font-inter: var(--font-inter);
+  --font-playfair: var(--font-playfair);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+/* Smooth scrolling for navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F9F7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CCA43B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8932F;
+}
