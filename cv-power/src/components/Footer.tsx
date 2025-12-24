@@ -121,9 +121,17 @@ export default function Footer() {
           <p className={styles.copyright}>
             © {currentYear} CV Power. Todos los derechos reservados.
           </p>
-            <p className={styles.copyright}>
-            © {currentYear} Diseño y Desarrollo por Channel Feliz.
-          </p>
+          <p className={styles.copyright}>
+             © {currentYear} Diseño y Desarrollo por{' '}
+               <a 
+                 href="https://fireforgerd.com" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 style={{ textDecoration: 'none', color: 'inherit' }} 
+                >
+                   FireforgeRD
+               </a>
+         </p>
           <div className={styles.legalLinks}>
             <a href="#" className={styles.legalLink}>Política de Privacidad</a>
             <a href="#" className={styles.legalLink}>Términos de Servicio</a>
